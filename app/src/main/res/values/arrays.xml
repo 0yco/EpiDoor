@@ -1,0 +1,12 @@
+<resources>
+    <string-array name="rooms">
+        <item>4eme</item>
+        <item>Foyer</item>
+        <item>SM1</item>
+        <item>SM2</item>
+        <item>Meetup</item>
+        <item>HUB</item>
+        <item>Stream</item>
+        <item>Admissions</item>
+    </string-array>
+</resources>

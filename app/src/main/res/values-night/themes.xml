@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.EpiWidget" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/epi_theme_primary</item>
+        <item name="colorPrimaryVariant">@color/epi_theme_primary_dark</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/epi_theme_secondary</item>
+        <item name="colorSecondaryVariant">@color/epi_theme_secondary_dark</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/epi_theme_primary_dark</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

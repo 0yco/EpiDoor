@@ -1,0 +1,61 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/token_header">
+
+        <EditTextPreference
+            app:key="token"
+            app:title="@string/token_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/visibility_header">
+
+        <SwitchPreferenceCompat
+            app:key="show_enter"
+            app:title="@string/enter"
+            app:summaryOn="Visible"
+            app:summaryOff="Hidden" />
+        <SwitchPreferenceCompat
+            app:key="show_foyer"
+            app:title="@string/foyer"
+            app:summaryOn="Visible"
+            app:summaryOff="Hidden" />
+        <SwitchPreferenceCompat
+            app:key="show_sm1"
+            app:title="@string/sm1"
+            app:summaryOn="Visible"
+            app:summaryOff="Hidden" />
+        <SwitchPreferenceCompat
+            app:key="show_sm2"
+            app:title="@string/sm2"
+            app:summaryOn="Visible"
+            app:summaryOff="Hidden" />
+        <SwitchPreferenceCompat
+            app:key="show_meetup"
+            app:title="@string/meetup"
+            app:summaryOn="Visible"
+            app:summaryOff="Hidden" />
+        <SwitchPreferenceCompat
+            app:key="show_hub"
+            app:title="@string/hub"
+            app:summaryOn="Visible"
+            app:summaryOff="Hidden" />
+        <SwitchPreferenceCompat
+            app:key="show_stream"
+            app:title="@string/stream"
+            app:summaryOn="Visible"
+            app:summaryOff="Hidden" />
+        <SwitchPreferenceCompat
+            app:key="show_incubateur"
+            app:title="@string/incubateur"
+            app:summaryOn="Visible"
+            app:summaryOff="Hidden" />
+        <SwitchPreferenceCompat
+            app:key="show_admissions"
+            app:title="@string/admissions"
+            app:summaryOn="Visible"
+            app:summaryOff="Hidden" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

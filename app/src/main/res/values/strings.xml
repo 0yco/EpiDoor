@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">EpiWidget</string>
+    <!-- Settings Activity Title -->
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="token_header">Token</string>
+    <string name="visibility_header">Buttons\' visibility</string>
+
+    <string name="token_title">Your token</string>
+    <!-- Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+
+    <!-- Room names -->
+    <string name="enter">4eme</string>
+    <string name="foyer">Foyer</string>
+    <string name="hub">HUB</string>
+    <string name="sm1">SM1</string>
+    <string name="meetup">Meetup</string>
+    <string name="sm2">SM2</string>
+    <string name="incubateur">Incubateur</string>
+    <string name="stream">Stream</string>
+    <string name="admissions">Admissions</string>
+</resources>
