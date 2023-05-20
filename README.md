@@ -2,7 +2,7 @@
 
 ## EpiDoor
 * Opens doors from a widget
-* Widget size
+* Widget resizable
 * Choice of the visibility of each button
 
 ## EpiMouli
