@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/Widget.EpiWidget.AppWidget.Container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,123 +7,46 @@
     android:theme="@style/Theme.EpiWidget.AppWidgetContainer">
 
     <LinearLayout
+        android:id="@+id/epidoor_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/enter_button"
-            style="@style/Widget.EpiWidget.AppWidget.InnerView"
+        <LinearLayout
+            android:id="@+id/row1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="4dp"
-            android:visibility="visible"
-            android:textSize="12sp"
-            android:text="@string/enter"
-            android:background="@drawable/ripple_effect"/>
-
-        <Button
-            android:id="@+id/foyer_button"
-            style="@style/Widget.EpiWidget.AppWidget.InnerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.2"
-            android:layout_margin="4dp"
-            android:visibility="visible"
-            android:textSize="12sp"
-            android:text="@string/foyer"
-            android:background="@drawable/ripple_effect"/>
-
-        <Button
-            android:id="@+id/hub_button"
-            style="@style/Widget.EpiWidget.AppWidget.InnerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.3"
-            android:layout_margin="4dp"
-            android:visibility="visible"
-            android:textSize="12sp"
-            android:text="@string/hub"
-            android:background="@drawable/ripple_effect"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <Button
-                android:id="@+id/sm1_button"
+                android:id="@+id/enter_button"
                 style="@style/Widget.EpiWidget.AppWidget.InnerView"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="4dp"
                 android:visibility="visible"
                 android:textSize="12sp"
-                android:text="@string/sm1"
+                android:textStyle="bold"
+                android:text="@string/enter"
                 android:background="@drawable/ripple_effect"/>
 
             <Button
-                android:id="@+id/sm2_button"
+                android:id="@+id/foyer_button"
                 style="@style/Widget.EpiWidget.AppWidget.InnerView"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
                 android:layout_margin="4dp"
                 android:visibility="visible"
                 android:textSize="12sp"
-                android:text="@string/sm2"
-                android:background="@drawable/ripple_effect"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/meetup_button"
-                style="@style/Widget.EpiWidget.AppWidget.InnerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="4dp"
-                android:visibility="visible"
-                android:textSize="12sp"
-                android:text="@string/meetup"
+                android:textStyle="bold"
+                android:text="@string/foyer"
                 android:background="@drawable/ripple_effect"/>
 
             <Button
-                android:id="@+id/stream_button"
-                style="@style/Widget.EpiWidget.AppWidget.InnerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="4dp"
-                android:visibility="visible"
-                android:textSize="12sp"
-                android:text="@string/stream"
-                android:background="@drawable/ripple_effect"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/incubateur_button"
+                android:id="@+id/hub_button"
                 style="@style/Widget.EpiWidget.AppWidget.InnerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -130,19 +54,121 @@
                 android:layout_margin="4dp"
                 android:visibility="visible"
                 android:textSize="12sp"
-                android:text="@string/incubateur"
+                android:textStyle="bold"
+                android:text="@string/hub"
                 android:background="@drawable/ripple_effect"/>
-            <Button
-                android:id="@+id/admissions_button"
-                style="@style/Widget.EpiWidget.AppWidget.InnerView"
-                android:layout_width="match_parent"
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+
+            <LinearLayout
+                android:id="@+id/column1"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_margin="4dp"
-                android:visibility="visible"
-                android:textSize="12sp"
-                android:text="@string/admissions"
-                android:background="@drawable/ripple_effect"/>
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/sm1_button"
+                    style="@style/Widget.EpiWidget.AppWidget.InnerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    android:visibility="visible"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="@string/sm1"
+                    android:background="@drawable/ripple_effect"
+                    tools:ignore="NestedWeights" />
+
+                <Button
+                    android:id="@+id/sm2_button"
+                    style="@style/Widget.EpiWidget.AppWidget.InnerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    android:visibility="visible"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="@string/sm2"
+                    android:background="@drawable/ripple_effect"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/column2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/meetup_button"
+                    style="@style/Widget.EpiWidget.AppWidget.InnerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    android:visibility="visible"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="@string/meetup"
+                    android:background="@drawable/ripple_effect"
+                    tools:ignore="NestedWeights" />
+
+                <Button
+                    android:id="@+id/stream_button"
+                    style="@style/Widget.EpiWidget.AppWidget.InnerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    android:visibility="visible"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="@string/stream"
+                    android:background="@drawable/ripple_effect"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/column3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/incubateur_button"
+                    style="@style/Widget.EpiWidget.AppWidget.InnerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.3"
+                    android:layout_margin="4dp"
+                    android:visibility="visible"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="@string/incubateur"
+                    android:background="@drawable/ripple_effect"
+                    tools:ignore="NestedWeights" />
+                <Button
+                    android:id="@+id/admissions_button"
+                    style="@style/Widget.EpiWidget.AppWidget.InnerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="4dp"
+                    android:visibility="visible"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="@string/admissions"
+                    android:background="@drawable/ripple_effect"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
