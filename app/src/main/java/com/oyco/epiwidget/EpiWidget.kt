@@ -104,12 +104,11 @@ internal fun updateAppWidget(
     views.setViewVisibility(R.id.incubateur_button, if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_incubateur", true)) View.VISIBLE else View.GONE)
     views.setViewVisibility(R.id.admissions_button, if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_admissions", true)) View.VISIBLE else View.GONE)
 
-    /* Set up columns visibility */
+    // Set up columns visibility
     views.setViewVisibility(R.id.row1, if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_enter", true) || PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_foyer", true) || PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_hub", true)) View.VISIBLE else View.GONE)
     views.setViewVisibility(R.id.column1, if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_sm1", true) || PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_sm2", true)) View.VISIBLE else View.GONE)
     views.setViewVisibility(R.id.column2, if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_meetup", true) || PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_stream", true)) View.VISIBLE else View.GONE)
     views.setViewVisibility(R.id.column3, if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_incubateur", true) || PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_admissions", true)) View.VISIBLE else View.GONE)
-    /* set column to horizontal */
 
 
     // Set up the click listeners
