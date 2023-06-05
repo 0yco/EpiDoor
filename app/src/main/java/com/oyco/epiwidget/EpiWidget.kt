@@ -3,6 +3,7 @@ package com.oyco.epiwidget
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -33,7 +34,9 @@ class EpiWidget : AppWidgetProvider() {
         }
 
         const val ACTION_DOOR_OPEN_CLICKED = "com.oyco.experience.ACTION_DOOR_OPEN_CLICKED"
+        const val ACTION_CHANGE_PANEL_CLICKED = "com.oyco.experience.ACTION_CHANGE_PANEL_CLICKED"
         var lastToken: String? = null
+        var panel: String? = "EpiDoor"
     }
 
     private val handler = Handler(Looper.getMainLooper())
@@ -49,6 +52,7 @@ class EpiWidget : AppWidgetProvider() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.S)
     override fun onReceive(context: Context, intent: Intent) {
         super.onReceive(context, intent)
         if (intent.action == ACTION_DOOR_OPEN_CLICKED) {
@@ -73,6 +77,22 @@ class EpiWidget : AppWidgetProvider() {
                     }
                 }
             })
+        } else if (intent.action == ACTION_CHANGE_PANEL_CLICKED) {
+            val views = RemoteViews(context.packageName, R.layout.epi_widget)
+            if (panel == "EpiDoor") {
+                panel = "EpiMouli"
+                views.setViewVisibility(R.id.epimouli_layout, View.VISIBLE)
+                views.setViewVisibility(R.id.refresh_button, View.VISIBLE)
+                views.setViewVisibility(R.id.epidoor_layout, View.GONE)
+            } else if (panel == "EpiMouli") {
+                panel = "EpiDoor"
+                views.setViewVisibility(R.id.epidoor_layout, View.VISIBLE)
+                views.setViewVisibility(R.id.epimouli_layout, View.GONE)
+                views.setViewVisibility(R.id.refresh_button, View.GONE)
+            }
+            val appWidgetManager = AppWidgetManager.getInstance(context)
+            val appWidgetIds = appWidgetManager.getAppWidgetIds(ComponentName(context, EpiWidget::class.java))
+            appWidgetManager.updateAppWidget(appWidgetIds, views)
         }
     }
 
@@ -110,24 +130,28 @@ internal fun updateAppWidget(
     views.setViewVisibility(R.id.column2, if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_meetup", true) || PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_stream", true)) View.VISIBLE else View.GONE)
     views.setViewVisibility(R.id.column3, if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_incubateur", true) || PreferenceManager.getDefaultSharedPreferences(context).getBoolean("show_admissions", true)) View.VISIBLE else View.GONE)
 
-
     // Set up the click listeners
-    views.setOnClickPendingIntent(R.id.enter_button, getPendingIntent(context, "4eme"))
-    views.setOnClickPendingIntent(R.id.foyer_button, getPendingIntent(context, "Foyer"))
-    views.setOnClickPendingIntent(R.id.sm1_button, getPendingIntent(context, "SM1"))
-    views.setOnClickPendingIntent(R.id.sm2_button, getPendingIntent(context, "SM2"))
-    views.setOnClickPendingIntent(R.id.meetup_button, getPendingIntent(context, "Meetup"))
-    views.setOnClickPendingIntent(R.id.hub_button, getPendingIntent(context, "HUB"))
-    views.setOnClickPendingIntent(R.id.stream_button, getPendingIntent(context, "Stream"))
-    views.setOnClickPendingIntent(R.id.incubateur_button, getPendingIntent(context, "Incubateur"))
-    views.setOnClickPendingIntent(R.id.admissions_button, getPendingIntent(context, "Admissions"))
+    val intent = Intent(context, EpiWidget::class.java).apply {
+        action = EpiWidget.ACTION_CHANGE_PANEL_CLICKED
+    }
+    views.setOnClickPendingIntent(R.id.switch_panel_button, PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_MUTABLE))
+
+    views.setOnClickPendingIntent(R.id.enter_button, getPendingIntentDoorOpen(context, "4eme"))
+    views.setOnClickPendingIntent(R.id.foyer_button, getPendingIntentDoorOpen(context, "Foyer"))
+    views.setOnClickPendingIntent(R.id.sm1_button, getPendingIntentDoorOpen(context, "SM1"))
+    views.setOnClickPendingIntent(R.id.sm2_button, getPendingIntentDoorOpen(context, "SM2"))
+    views.setOnClickPendingIntent(R.id.meetup_button, getPendingIntentDoorOpen(context, "Meetup"))
+    views.setOnClickPendingIntent(R.id.hub_button, getPendingIntentDoorOpen(context, "HUB"))
+    views.setOnClickPendingIntent(R.id.stream_button, getPendingIntentDoorOpen(context, "Stream"))
+    views.setOnClickPendingIntent(R.id.incubateur_button, getPendingIntentDoorOpen(context, "Incubateur"))
+    views.setOnClickPendingIntent(R.id.admissions_button, getPendingIntentDoorOpen(context, "Admissions"))
 
     // Instruct the widget manager to update the widget
     appWidgetManager.updateAppWidget(appWidgetId, views)
 }
 
 @RequiresApi(Build.VERSION_CODES.S)
-private fun getPendingIntent(context: Context, doorName: String): PendingIntent {
+private fun getPendingIntentDoorOpen(context: Context, doorName: String): PendingIntent {
     val intent = Intent(context, EpiWidget::class.java).apply {
         action = EpiWidget.ACTION_DOOR_OPEN_CLICKED
         data = Uri.parse("https://epilogue.arykow.com/api/doors_open?token=$lastToken&door_name=$doorName")
