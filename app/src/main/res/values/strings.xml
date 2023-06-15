@@ -19,12 +19,7 @@
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>
 
-    <!-- Nav -->
-    <string name="epi_widget_switch_panel">Epidoor ⇄ Epimouli</string>
-
-    <!-- EpiMouli -->
-
-    <!-- EpiDoor -->
+    <!-- Room names -->
     <string name="enter">4eme</string>
     <string name="foyer">Foyer</string>
     <string name="hub">HUB</string>
