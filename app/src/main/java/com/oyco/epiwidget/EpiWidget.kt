@@ -77,7 +77,7 @@ class EpiWidget : AppWidgetProvider() {
     }
 
     override fun onEnabled(context: Context) {
-        Toast.makeText(context, "Don't forget to configure your widget in the settings", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "Force exit if buttons are not updated in the Widget", Toast.LENGTH_LONG).show()
     }
 }
 

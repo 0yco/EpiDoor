@@ -13,46 +13,55 @@
 
         <SwitchPreferenceCompat
             app:key="show_enter"
+            app:defaultValue="true"
             app:title="@string/enter"
             app:summaryOn="Visible"
             app:summaryOff="Hidden" />
         <SwitchPreferenceCompat
             app:key="show_foyer"
+            app:defaultValue="true"
             app:title="@string/foyer"
             app:summaryOn="Visible"
             app:summaryOff="Hidden" />
         <SwitchPreferenceCompat
             app:key="show_sm1"
+            app:defaultValue="true"
             app:title="@string/sm1"
             app:summaryOn="Visible"
             app:summaryOff="Hidden" />
         <SwitchPreferenceCompat
             app:key="show_sm2"
+            app:defaultValue="true"
             app:title="@string/sm2"
             app:summaryOn="Visible"
             app:summaryOff="Hidden" />
         <SwitchPreferenceCompat
             app:key="show_meetup"
+            app:defaultValue="true"
             app:title="@string/meetup"
             app:summaryOn="Visible"
             app:summaryOff="Hidden" />
         <SwitchPreferenceCompat
             app:key="show_hub"
+            app:defaultValue="true"
             app:title="@string/hub"
             app:summaryOn="Visible"
             app:summaryOff="Hidden" />
         <SwitchPreferenceCompat
             app:key="show_stream"
+            app:defaultValue="true"
             app:title="@string/stream"
             app:summaryOn="Visible"
             app:summaryOff="Hidden" />
         <SwitchPreferenceCompat
             app:key="show_incubateur"
+            app:defaultValue="true"
             app:title="@string/incubateur"
             app:summaryOn="Visible"
             app:summaryOff="Hidden" />
         <SwitchPreferenceCompat
             app:key="show_admissions"
+            app:defaultValue="true"
             app:title="@string/admissions"
             app:summaryOn="Visible"
             app:summaryOff="Hidden" />
