@@ -30,6 +30,7 @@
                 android:textSize="12sp"
                 android:textStyle="bold"
                 android:text="@string/enter"
+                android:textColor="@color/white"
                 android:background="@drawable/ripple_effect"/>
 
             <Button
@@ -43,6 +44,7 @@
                 android:textSize="12sp"
                 android:textStyle="bold"
                 android:text="@string/foyer"
+                android:textColor="@color/white"
                 android:background="@drawable/ripple_effect"/>
 
             <Button
@@ -56,6 +58,7 @@
                 android:textSize="12sp"
                 android:textStyle="bold"
                 android:text="@string/hub"
+                android:textColor="@color/white"
                 android:background="@drawable/ripple_effect"/>
         </LinearLayout>
 
@@ -84,6 +87,7 @@
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:text="@string/sm1"
+                    android:textColor="@color/white"
                     android:background="@drawable/ripple_effect"
                     tools:ignore="NestedWeights" />
 
@@ -98,6 +102,7 @@
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:text="@string/sm2"
+                    android:textColor="@color/white"
                     android:background="@drawable/ripple_effect"/>
             </LinearLayout>
 
@@ -119,6 +124,7 @@
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:text="@string/meetup"
+                    android:textColor="@color/white"
                     android:background="@drawable/ripple_effect"
                     tools:ignore="NestedWeights" />
 
@@ -133,6 +139,7 @@
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:text="@string/stream"
+                    android:textColor="@color/white"
                     android:background="@drawable/ripple_effect"/>
             </LinearLayout>
 
@@ -154,6 +161,7 @@
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:text="@string/incubateur"
+                    android:textColor="@color/white"
                     android:background="@drawable/ripple_effect"
                     tools:ignore="NestedWeights" />
                 <Button
@@ -167,6 +175,7 @@
                     android:textSize="12sp"
                     android:textStyle="bold"
                     android:text="@string/admissions"
+                    android:textColor="@color/white"
                     android:background="@drawable/ripple_effect"/>
             </LinearLayout>
         </LinearLayout>

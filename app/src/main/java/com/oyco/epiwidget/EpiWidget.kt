@@ -130,7 +130,7 @@ internal fun updateAppWidget(
 private fun getPendingIntent(context: Context, doorName: String): PendingIntent {
     val intent = Intent(context, EpiWidget::class.java).apply {
         action = EpiWidget.ACTION_DOOR_OPEN_CLICKED
-        data = Uri.parse("https://epilogue.arykow.com/api/doors_open?token=$lastToken&door_name=$doorName")
+        data = Uri.parse("https://tekme.eu/api/doors_open?token=$lastToken&door_name=$doorName")
     }
     return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_MUTABLE)
 }
